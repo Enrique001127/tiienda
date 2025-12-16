@@ -13,7 +13,7 @@
 
     {% if carrito.items.count == 0 %}
         <div class="alert alert-info">Tu carrito está vacío.</div>
-        <a href="{% url 'dashboard' %}" class="btn btn-primary">Seguir comprando</a>
+        <a href="{% url 'dashboard' %}" class="btn btn-primary seguir-comprando">Seguir comprando</a>
     {% else %}
         <div class="table-responsive">
             <table class="table table-striped">
@@ -38,7 +38,7 @@
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-sm btn-danger"
                                             onclick="return confirm('¿Seguro que deseas quitar este producto?')">
-                                         Quitar
+                                        Quitar
                                     </button>
                                 </form>
                             </td>
@@ -86,13 +86,19 @@
         box-sizing: border-box;
         padding: 5px;
     }
-    .table-striped {
+.table-striped {
     width: 100%;
     border-collapse: collapse;
     background: white;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
+}
+
+.seguir-comprando {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
 }
 .d-flex.gap-2 {
     display: flex;
